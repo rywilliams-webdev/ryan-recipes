@@ -36,42 +36,43 @@ npm run lint
 
 ### Coding Challenge
 
-Recipe Website
-Build a React.js/Vue.js application that allows you to search for a recipe using the spoonacular API
-The code and application should be publicly available (ex: GitHub / GitHub Pages)
-Requirements
-The website / application should have the following pages:
-Home Page
-At minimum this page should have following:
-Search input
-Search button
-Search results with pagination (5 per page) and ability to filter by cuisine.
-For each search result display the following information:
-Recipe Name
-Recipe Image
-When the user hits the enter key or clicks the search button, the search results are displayed.
-When the user clicks on the recipe, it's redirected to the detail page.
-Recipe Detail Page
-At minimum this page should have following:
-Recipe Name
-Recipe Image
-Health Information (Ex: vegan, dairy-free)
-List of ingredients
-Cooking instructions
-For each ingredient display the following information:
-Ingredient Name
-Ingredient Measure
-API documentation
-Authentication:
-https://spoonacular.com/food-api/docs#Authentication
-Search recipes:
-https://spoonacular.com/food-api/docs#Search-Recipes-Complex
+### Recipe Website Coding Challenge
 
-coding-challenge.md 2025-05-02
+Build a React.js/Vue.js application that allows users to search for recipes using the Spoonacular API. The code and application should be publicly available (e.g., GitHub repository and/or GitHub Pages).
 
-2 / 2
+#### Requirements
 
-Get recipe:
-https://spoonacular.com/food-api/docs#Get-Recipe-Information
-Supported cuisines:
-https://spoonacular.com/food-api/docs#Cuisines
+The website/application should include the following pages:
+
+#### Home Page
+
+- **Features**:
+  - Search input field.
+  - Search button.
+  - Search results with pagination (5 results per page) and the ability to filter by cuisine.
+- **Search Results**:
+  - Display the following information for each recipe:
+    - Recipe Name.
+    - Recipe Image.
+  - When the user presses the Enter key or clicks the search button, the search results are displayed.
+  - Clicking on a recipe redirects the user to the Recipe Detail Page.
+
+#### Recipe Detail Page
+
+- **Features**:
+  - Display the following information:
+    - Recipe Name.
+    - Recipe Image.
+    - Health Information (e.g., vegan, dairy-free).
+    - List of ingredients.
+    - Cooking instructions.
+  - For each ingredient, display:
+    - Ingredient Name.
+    - Ingredient Measure.
+
+#### API Documentation
+
+- **Authentication**: [Spoonacular Authentication](https://spoonacular.com/food-api/docs#Authentication)
+- **Search Recipes**: [Search Recipes API](https://spoonacular.com/food-api/docs#Search-Recipes-Complex)
+- **Get Recipe Information**: [Get Recipe API](https://spoonacular.com/food-api/docs#Get-Recipe-Information)
+- **Supported Cuisines**: [Supported Cuisines API](https://spoonacular.com/food-api/docs#Cuisines)
