@@ -6,10 +6,14 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/:query?',
+      path: '/',
       name: 'home',
       component: HomeView,
-      props: true,
+      props: (route) => ({
+        query: route.query.query,
+        page: route.query.page,
+        cuisine: route.query.cuisine,
+      }),
     },
     {
       path: '/recipe-details/:id',
