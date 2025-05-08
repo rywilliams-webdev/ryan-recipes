@@ -58,7 +58,7 @@ const searchRecipe = async (query = '', page = 1, cuisine = '') => {
   try {
     const response = await fetch(url, {
       headers: {
-        'x-api-key': import.meta.env.VITE_API_KEY,
+        'x-api-key': '7dd2f4965dbc42eb8f70a57ef71b8e36',
       },
     })
 

@@ -64,7 +64,8 @@ const fetchRecipeDetails = async (id) => {
   try {
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information`, {
       headers: {
-        'x-api-key': import.meta.env.VITE_API_KEY,
+        // Not secure... Should be stored in .env file and managed in the backend
+        'x-api-key': '7dd2f4965dbc42eb8f70a57ef71b8e36',
       },
     })
 
