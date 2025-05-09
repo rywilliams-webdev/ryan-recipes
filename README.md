@@ -1,41 +1,5 @@
 # ryan-recipes
 
-### Coding Challenge
-
-### Recipe Website Coding Challenge
-
-Build a React.js/Vue.js application that allows users to search for recipes using the Spoonacular API. The code and application should be publicly available (e.g., GitHub repository and/or GitHub Pages).
-
-#### Requirements
-
-The website/application should include the following pages:
-
-#### Home Page
-
-- **Features**:
-  - Search input field.
-  - Search button.
-  - Search results with pagination (5 results per page) and the ability to filter by cuisine.
-- **Search Results**:
-  - Display the following information for each recipe:
-    - Recipe Name.
-    - Recipe Image.
-  - When the user presses the Enter key or clicks the search button, the search results are displayed.
-  - Clicking on a recipe redirects the user to the Recipe Detail Page.
-
-#### Recipe Detail Page
-
-- **Features**:
-  - Display the following information:
-    - Recipe Name.
-    - Recipe Image.
-    - Health Information (e.g., vegan, dairy-free).
-    - List of ingredients.
-    - Cooking instructions.
-  - For each ingredient, display:
-    - Ingredient Name.
-    - Ingredient Measure.
-
 #### API Documentation
 
 - **Authentication**: [Spoonacular Authentication](https://spoonacular.com/food-api/docs#Authentication)
