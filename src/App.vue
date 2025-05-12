@@ -6,7 +6,7 @@ import SearchBar from './components/SearchBar.vue'
 <template>
   <header>
     <RouterLink to="/" class="logo-link">
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="50" height="50" />
+      <img alt="Vue logo" class="logo" src="@/assets/svgs/logo.svg" width="50" height="50" />
       <h3 class="logo-text">Recipe Finder</h3>
     </RouterLink>
     <SearchBar />

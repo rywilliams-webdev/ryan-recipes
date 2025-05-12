@@ -4,13 +4,13 @@
     <section class="header">
       <!-- Refactor idea: Add breadcrumbs to the main header for clarity + extra navigation -->
 
-      <h1><span class="btn-back" @click="router.go(-1)">Back</span>Recipe Details</h1>
-      <h2 class="recipe-title">{{ recipe.title }}</h2>
+      <a class="btn-back" @click="router.go(-1)">Back</a>
+      <h1 class="recipe-title">{{ recipe.title }}</h1>
     </section>
 
     <img class="recipe-image" :src="recipe.image" alt="Recipe Image" @error="placeholderImage" />
     <!-- Health Details -->
-    <div class="health-details">
+    <article class="health-details">
       <h3>Health Details</h3>
       <ul>
         <li :class="{ 'not-included': !recipe.dairyFree }">Dairy Free</li>
@@ -18,17 +18,17 @@
         <li :class="{ 'not-included': !recipe.vegan }">Vegan</li>
         <li :class="{ 'not-included': !recipe.vegetarian }">Vegetarian</li>
       </ul>
-    </div>
+    </article>
 
     <!-- Ingredients -->
-    <section class="ingredients">
+    <article class="ingredients">
       <h3>Ingredients</h3>
       <ul>
         <li v-for="ingredient in recipe.extendedIngredients" :key="ingredient.id">
           {{ ingredient.original }}
         </li>
       </ul>
-    </section>
+    </article>
 
     <!-- Cooking Instructions -->
     <article class="instructions">
@@ -84,14 +84,37 @@ const fetchRecipeDetails = async (id) => {
 </script>
 
 <style scoped>
+main {
+  max-width: 1500px;
+  margin: auto;
+}
+
 img {
   width: 100%;
   height: auto;
 }
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+h3 {
+  color: hsl(160, 100%, 37%);
+}
+
+article {
+  margin-bottom: 15px;
+}
 .btn-back {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin-right: 4px;
+  color: black;
 }
 .recipe-title {
   color: hsl(160, 100%, 37%);
@@ -128,7 +151,7 @@ img {
     grid-template-areas:
       'header header'
       'image ingredients'
-      'health ingredients'
+      'image health'
       'instructions instructions';
     gap: 1rem;
   }
@@ -143,8 +166,7 @@ img {
   }
   .ingredients {
     grid-area: ingredients;
-    background-color: hsl(160, 100%, 37%);
-    color: white;
+    background-color: hsla(160, 100%, 37%, 0.164);
     padding: 1rem;
     border-radius: 4px;
   }
