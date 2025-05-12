@@ -147,11 +147,11 @@ article {
   main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto 60px auto;
     grid-template-areas:
       'header header'
-      'image ingredients'
       'image health'
+      'image ingredients'
       'instructions instructions';
     gap: 1rem;
   }
@@ -172,8 +172,13 @@ article {
   }
   .health-details {
     grid-area: health;
-    padding: 1rem;
+    padding: 0 1rem;
   }
+  .health-details h3 {
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
   .instructions {
     grid-area: instructions;
     padding: 1rem;
