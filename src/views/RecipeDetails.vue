@@ -1,5 +1,5 @@
 <template>
-  <main v-if="!errorMessage">
+  <main class="page-container" v-if="!errorMessage">
     <!-- Details -->
     <section class="header">
       <!-- Refactor idea: Add breadcrumbs to the main header for clarity + extra navigation -->
@@ -45,6 +45,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePlaceholderImage } from '@/composables/usePlaceholderImage.js'
+import { API_HEADER } from '@/constants/apiHeader'
 
 const props = defineProps({
   id: String,
@@ -61,34 +62,24 @@ onMounted(() => {
 })
 
 const fetchRecipeDetails = async (id) => {
-  try {
-    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information`, {
-      headers: {
-        // Not secure... Should be stored in .env file and managed in the backend
-        'x-api-key': '7dd2f4965dbc42eb8f70a57ef71b8e36',
-      },
+  let url = `https://api.spoonacular.com/recipes/${id}/information`
+
+  fetch(url, { headers: API_HEADER })
+    .then((res) => res.json())
+    .then((json) => {
+      recipe.value = json
+      clearErrorMessage()
     })
+    .catch((err) => (errorMessage.value = err))
+}
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-
-    const data = await response.json()
-    recipe.value = data
-    errorMessage.value = ''
-  } catch (error) {
-    console.error('Error fetching recipe details:', error)
-    errorMessage.value = 'Failed to fetch recipe details. Please try again later.'
-  }
+// Clear error message
+const clearErrorMessage = () => {
+  errorMessage.value = ''
 }
 </script>
 
 <style scoped>
-main {
-  max-width: 1500px;
-  margin: auto;
-}
-
 img {
   width: 100%;
   height: auto;
